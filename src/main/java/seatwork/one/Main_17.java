@@ -49,7 +49,7 @@ public class Main_17 {
 
     private static void swap(int[] arr, int j, int i) {
         int temp = arr[j];
-        arr[j] = arr[i];
+        arr[j] =  arr[i];
         arr[i] = temp;
     }
 

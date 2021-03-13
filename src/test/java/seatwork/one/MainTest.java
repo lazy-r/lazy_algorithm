@@ -13,7 +13,7 @@ public class MainTest {
 
     @Test
     public void main() throws Exception {
-        test(Main_9.class);
+        test(Main_5.class);
     }
 
     public void test(Class solution) throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -24,7 +24,19 @@ public class MainTest {
 
         System.out.println("题目"+questionNumber.substring(questionNumber.lastIndexOf("_")+1)+"开始测试=================");
 
-        String basicPath = "F:\\work\\projects\\formalProject\\myArithmetic\\src\\main\\resources\\seatwork\\case\\"+homeworkNumber+"/"+questionNumber+"/";
+
+        /*
+            ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+            Resource resource = resolver.getResource(filePath);
+            InputStream inputStream = resource.getInputStream();
+            File ttfFile = new File(filePath);
+            FileUtils.copyInputStreamToFile(inputStream, ttfFile);
+            FileReader reader = new FileReader(ttfFile); // 建立一个输入流对象reader
+
+            BufferedReader br = new BufferedReader(reader);
+         */
+
+        String basicPath = "seatwork/case/"+homeworkNumber+"/"+questionNumber+"/";
         deleteTemp(basicPath);
 
 

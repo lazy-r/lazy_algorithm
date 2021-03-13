@@ -1,6 +1,5 @@
 package leetcode.medium;
 
-import leetcode.dynamic_programming.medium.Triangle_120;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +27,5 @@ public class Triangle_120Test {
         triangle.add(row1);
         triangle.add(row2);
         triangle.add(row3);
-        System.out.println(new Triangle_120().minimumTotal(triangle));
     }
 }

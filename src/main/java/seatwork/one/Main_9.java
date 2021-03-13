@@ -43,8 +43,6 @@ public class Main_9 {
             double cos = (double)this.vector.x/Math.sqrt(Math.pow(this.vector.x, 2)+Math.pow(this.vector.y, 2));
             this.angle = Math.toDegrees(Math.acos(cos));
             this.angle = this.vector.y < 0?-this.angle:angle;
-//            System.out.println(toString());
-//            System.out.println("cos ==> "+(this.vector.y < 0?-cos:cos));
         }
 
         @Override
@@ -62,7 +60,6 @@ public class Main_9 {
             int x = otherVector.x;
             int y = otherVector.y;
             int t = this.vector.x*y - this.vector.y*y + this.origin.x*this.point.y - this.origin.y*this.point.x;
-//            System.out.println(otherVector+"在直线"+origin+"->"+point+(t > 0?"左边":t == 0?"线上":"右边"));
             return this.vector.x*y - this.vector.y*y + this.origin.x*this.point.y - this.origin.y*this.point.x > 0;
         }
     }
@@ -96,7 +93,6 @@ public class Main_9 {
 
         Arrays.sort(points);
         Point lowerLeftPoint = points[0];
-//        System.out.println(lowerLeftPoint);
 
 
         List<Vector> vectors = new ArrayList<>();
@@ -104,7 +100,6 @@ public class Main_9 {
             Vector vector = new Vector(points[i]);
             vector.setVector(lowerLeftPoint);
             vectors.add(vector);
-//            System.out.println(vector);
         }
 
         vectors.sort(new Comparator<Vector>() {
@@ -114,7 +109,6 @@ public class Main_9 {
                 return Math.abs(o1.angle - o2.angle) < 1e-6?Math.abs(o1.module - o2.module) < 1e-6?0:o1.module - o2.module>0?1:-1:o1.angle - o2.angle > 0?1:-1;
             }
         });
-//        System.out.println("角度排序=>"+vectors);
 
 
         // 预处理
@@ -126,7 +120,6 @@ public class Main_9 {
 
         for (Vector vector : vectors) {
             if(Math.abs(vectors.get(0).angle - vector.angle) < 1e-6){
-//                temp.add(vector);
                 vertexSet.push(vector);
                 index++;
             }else {
@@ -134,9 +127,6 @@ public class Main_9 {
             }
         }
 
-//        for (int i = temp.size() - 1; i >= 0; i--) {
-//            vertexSet.push(temp.get(i));
-//        }
 
 
         for (int i = vectors.size() - 1  ; i >= index; i--) {
@@ -147,8 +137,6 @@ public class Main_9 {
             return;
         }
 
-//        System.out.println("vertexSet = "+vertexSet);
-//        System.out.println("pointSet = "+pointSet);
 
 
         while (!pointSet.isEmpty()){
@@ -200,7 +188,6 @@ public class Main_9 {
 
     private static int position(Point start, Point end, Point unknown){
         int position = (start.y - end.y)*unknown.x + (end.x - start.x)*unknown.y + start.x*end.y - end.x*start.y;
-//        System.out.println(unknown+"在直线"+start+"->"+end+(position > 0?"左边":position == 0?"线上":"右边"));
         return position;
     }
 
